@@ -44,20 +44,20 @@ const skills = [
 ];
 
 const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
-  <div className="card-brutalist bg-card p-8 h-full flex flex-col items-center text-center">
-    <div className="w-20 h-20 mb-6 flex items-center justify-center">
+  <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-white/40 hover:bg-white/15">
+    <div className="w-20 h-20 mb-6 flex items-center justify-center bg-white/10 rounded-xl">
       <img 
         src={skill.icon} 
         alt={skill.title}
-        className="w-16 h-16 object-contain"
+        className="w-14 h-14 object-contain"
       />
     </div>
     
-    <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
+    <h3 className="font-heading text-2xl font-bold text-white mb-3">
       {skill.title}
     </h3>
     
-    <p className="font-body text-base text-muted-foreground">
+    <p className="font-body text-base text-white/80">
       {skill.description}
     </p>
   </div>
@@ -65,7 +65,7 @@ const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
 
 const Skills = () => {
   return (
-    <section id="habilidades" className="py-24 md:py-32">
+    <section id="habilidades" className="py-16 md:py-20 section-accent-bg">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title">Habilidades & Tecnologias</h2>
