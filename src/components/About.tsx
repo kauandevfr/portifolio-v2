@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <section id="sobre" className="py-24 md:py-32">
+    <section id="sobre" className="py-16 md:py-20">
       <div className="section-container">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Column */}

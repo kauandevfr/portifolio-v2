@@ -69,7 +69,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
 
 const Projects = () => {
   return (
-    <section id="projetos" className="py-24 md:py-32 bg-secondary/30">
+    <section id="projetos" className="py-16 md:py-20 bg-secondary/30">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="section-title">Meus Projetos</h2>

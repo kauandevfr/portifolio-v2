@@ -47,6 +47,9 @@
     
     --gradient-primary: linear-gradient(135deg, hsl(349 65% 29%), hsl(349 65% 22%));
     --gradient-hero: linear-gradient(180deg, hsl(39 33% 95%) 0%, hsl(39 33% 92%) 100%);
+    
+    --section-accent: 349 65% 29%;
+    --section-accent-foreground: 39 33% 95%;
   }
 
   .dark {
@@ -105,7 +108,7 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-foreground mb-4;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4;
     font-family: var(--font-heading);
   }
 
@@ -115,7 +118,7 @@
   }
 
   .card-brutalist {
-    @apply bg-card border-2 border-foreground/10 transition-all duration-300;
+    @apply bg-card border-2 border-foreground/10 transition-all duration-300 rounded-2xl;
     box-shadow: var(--shadow-card);
   }
 
@@ -126,21 +129,39 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-none bg-primary text-primary-foreground transition-all duration-200;
-    box-shadow: 4px 4px 0 hsl(var(--foreground));
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full bg-primary text-primary-foreground transition-all duration-200;
+    box-shadow: 0 4px 14px hsl(var(--primary) / 0.4);
   }
 
   .btn-primary:hover {
-    box-shadow: 2px 2px 0 hsl(var(--foreground));
-    transform: translate(2px, 2px);
+    box-shadow: 0 6px 20px hsl(var(--primary) / 0.5);
+    transform: translateY(-2px);
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-none bg-transparent border-2 border-foreground text-foreground transition-all duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full bg-transparent border-2 border-foreground text-foreground transition-all duration-200;
   }
 
   .btn-outline:hover {
     @apply bg-foreground text-background;
+  }
+
+  .section-accent-bg {
+    background: hsl(var(--section-accent));
+    color: hsl(var(--section-accent-foreground));
+  }
+
+  .section-accent-bg .section-title,
+  .section-accent-bg .section-subtitle {
+    color: hsl(var(--section-accent-foreground));
+  }
+
+  .section-accent-bg .card-brutalist {
+    @apply bg-background/10 border-white/20;
+  }
+
+  .section-accent-bg .card-brutalist:hover {
+    @apply border-white/40;
   }
 }
 
