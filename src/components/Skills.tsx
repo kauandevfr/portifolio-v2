@@ -1,0 +1,87 @@
+import Carousel from './Carousel';
+
+const skills = [
+  { 
+    title: "JavaScript", 
+    description: "ES6+, DOM, async/await, promises.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+  },
+  { 
+    title: "React.js", 
+    description: "Hooks, Context API, integração com APIs.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+  },
+  { 
+    title: "HTML5", 
+    description: "Semântica, acessibilidade e SEO.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+  },
+  { 
+    title: "CSS3", 
+    description: "Flexbox, Grid, animações e responsividade.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+  },
+  { 
+    title: "Node.js", 
+    description: "APIs REST, autenticação e Express.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+  },
+  { 
+    title: "PostgreSQL", 
+    description: "Modelagem relacional e otimização.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+  },
+  { 
+    title: "Photoshop", 
+    description: "Edição e composição visual.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg"
+  },
+  { 
+    title: "Illustrator", 
+    description: "Criação de vetores e identidade visual.",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
+  }
+];
+
+const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
+  <div className="card-brutalist bg-card p-8 h-full flex flex-col items-center text-center">
+    <div className="w-20 h-20 mb-6 flex items-center justify-center">
+      <img 
+        src={skill.icon} 
+        alt={skill.title}
+        className="w-16 h-16 object-contain"
+      />
+    </div>
+    
+    <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
+      {skill.title}
+    </h3>
+    
+    <p className="font-body text-base text-muted-foreground">
+      {skill.description}
+    </p>
+  </div>
+);
+
+const Skills = () => {
+  return (
+    <section id="habilidades" className="py-24 md:py-32">
+      <div className="section-container">
+        <div className="text-center mb-16">
+          <h2 className="section-title">Habilidades & Tecnologias</h2>
+          <p className="section-subtitle max-w-2xl mx-auto">
+            Ferramentas e tecnologias que utilizo no dia a dia.
+          </p>
+        </div>
+
+        <Carousel>
+          {skills.map((skill, index) => (
+            <SkillCard key={index} skill={skill} />
+          ))}
+        </Carousel>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
