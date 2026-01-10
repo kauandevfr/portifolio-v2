@@ -1,62 +1,62 @@
 import Carousel from './Carousel';
 
 const skills = [
-  { 
-    title: "JavaScript", 
+  {
+    title: "JavaScript",
     description: "ES6+, DOM, async/await, promises.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
   },
-  { 
-    title: "React.js", 
+  {
+    title: "React.js",
     description: "Hooks, Context API, integração com APIs.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
   },
-  { 
-    title: "HTML5", 
+  {
+    title: "HTML5",
     description: "Semântica, acessibilidade e SEO.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
   },
-  { 
-    title: "CSS3", 
+  {
+    title: "CSS3",
     description: "Flexbox, Grid, animações e responsividade.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
   },
-  { 
-    title: "Node.js", 
+  {
+    title: "Node.js",
     description: "APIs REST, autenticação e Express.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
   },
-  { 
-    title: "PostgreSQL", 
+  {
+    title: "PostgreSQL",
     description: "Modelagem relacional e otimização.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
   },
-  { 
-    title: "Photoshop", 
+  {
+    title: "Photoshop",
     description: "Edição e composição visual.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg"
   },
-  { 
-    title: "Illustrator", 
+  {
+    title: "Illustrator",
     description: "Criação de vetores e identidade visual.",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
   }
 ];
 
 const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
-  <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-white/40 hover:bg-white/15">
+  <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-white/40 hover:bg-white/15">
     <div className="w-20 h-20 mb-6 flex items-center justify-center bg-white/10 rounded-xl">
-      <img 
-        src={skill.icon} 
+      <img
+        src={skill.icon}
         alt={skill.title}
         className="w-14 h-14 object-contain"
       />
     </div>
-    
+
     <h3 className="font-heading text-2xl font-bold text-white mb-3">
       {skill.title}
     </h3>
-    
+
     <p className="font-body text-base text-white/80">
       {skill.description}
     </p>
@@ -65,11 +65,11 @@ const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
 
 const Skills = () => {
   return (
-    <section id="habilidades" className="py-16 md:py-20 section-accent-bg">
+    <section id="habilidades" className="py-12 md:py-20 section-accent-bg">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title">Habilidades & Tecnologias</h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <p className="section-subtitle max-w-4xl mx-auto">
             Ferramentas e tecnologias que utilizo no dia a dia.
           </p>
         </div>

@@ -20,7 +20,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 border-t border-foreground/10">
+    <footer className="py-4 border-t border-foreground/10">
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Social Links */}
@@ -38,10 +38,10 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          
+
           {/* Copyright */}
           <p className="font-body text-sm text-muted-foreground">
-            Desenvolvido por <span className="text-foreground font-medium">Kauan Rodrigues</span>
+            Desenvolvido por: <span className="text-foreground font-medium">Kauan Rodrigues</span>
           </p>
         </div>
       </div>

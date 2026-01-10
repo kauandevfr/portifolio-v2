@@ -49,7 +49,7 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['Playfair Display', 'serif'],
+        heading: ['ITC Garamond Std Book Narrow', 'serif'],
         body: ['Roboto', 'sans-serif'],
       },
       borderRadius: {

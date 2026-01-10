@@ -8,6 +8,20 @@ const projects = [
     techs: ["ReactJS", "HTML5", "CSS3", "Node.js"],
     repo: "https://github.com/kauandevfr/fluxofinanceirofrontend",
     access: "https://www.fluxofinanceiro.site"
+  },
+  {
+    title: "Projeto Salve Quebrada",
+    description: "Iniciativa social voltada à promoção do esporte e do desenvolvimento social na comunidade.",
+    techs: ["ReactJS", "HTML5", "CSS3"],
+    repo: "https://github.com/kauandevfr/salve-quebrada",
+    access: "https://www.salvequebrada.org/"
+  },
+  {
+    title: "Portifólio",
+    description: "Projeto autoral desenvolvido com apoio de inteligência artificial, com implementação e customização realizadas manualmente.",
+    techs: ["ReactJS", "HTML5", "Inteligência Artificial"],
+    repo: "https://github.com/kauandevfr/portifolio-v2",
+    access: "https://www.kauanrodrigues.com.br/"
   }
 ];
 
@@ -20,16 +34,16 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
         {project.title.charAt(0)}
       </span>
     </div>
-    
+
     <div className="p-6 flex flex-col flex-grow">
       <h3 className="font-heading text-xl font-bold text-foreground mb-2">
         {project.title}
       </h3>
-      
+
       <p className="font-body text-sm text-muted-foreground mb-4 flex-grow">
         {project.description}
       </p>
-      
+
       {/* Tech Stack */}
       <div className="flex flex-wrap gap-2 mb-6">
         {project.techs.map((tech, index) => (
@@ -41,7 +55,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
           </span>
         ))}
       </div>
-      
+
       {/* Links */}
       <div className="flex gap-4">
         <a
@@ -69,12 +83,12 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
 
 const Projects = () => {
   return (
-    <section id="projetos" className="py-16 md:py-20 bg-secondary/30">
+    <section id="projetos" className="py-12 md:py-20 bg-secondary/30">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title">Meus Projetos</h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
-            Seleção dos meus trabalhos mais recentes.
+          <p className="section-subtitle max-w-4xl mx-auto">
+            Seleção dos meus trabalhos mais recentes, demonstrando habilidades em desenvolvimento de sites e design gráfico.
           </p>
         </div>
 

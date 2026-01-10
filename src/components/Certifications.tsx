@@ -40,19 +40,19 @@ const CertificationCard = ({ certificate }: { certificate: typeof certificates[0
       </div>
       <span className="font-body text-sm text-muted-foreground">{certificate.year}</span>
     </div>
-    
+
     <h3 className="font-heading text-xl font-bold text-foreground mb-2">
       {certificate.title}
     </h3>
-    
+
     <p className="font-body text-sm text-primary font-medium mb-3">
       {certificate.organization}
     </p>
-    
+
     <p className="font-body text-sm text-muted-foreground mb-6 flex-grow">
       {certificate.description}
     </p>
-    
+
     <a
       href={certificate.credential}
       target="_blank"
@@ -67,11 +67,11 @@ const CertificationCard = ({ certificate }: { certificate: typeof certificates[0
 
 const Certifications = () => {
   return (
-    <section id="certificacoes" className="py-16 md:py-20 bg-secondary/30">
+    <section id="certificacoes" className="py-12 md:py-20 bg-secondary/30">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title">Certificações & Cursos</h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <p className="section-subtitle max-w-4xl mx-auto">
             Formação contínua para entregar sempre o melhor resultado.
           </p>
         </div>

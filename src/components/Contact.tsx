@@ -2,15 +2,15 @@ import { Mail, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contato" className="py-16 md:py-20 section-accent-bg">
+    <section id="contato" className="py-12 md:py-20 section-accent-bg">
       <div className="section-container">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="section-title mb-6">Vamos trabalhar juntos?</h2>
-          
-          <p className="font-body text-xl text-muted-foreground mb-12">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="section-title mb-2">Vamos trabalhar juntos?</h2>
+
+          <p className="section-subtitle max-w-2xl mx-auto mb-12">
             Se tiver uma boa ideia, vamos tirar do papel juntos.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:kauan@kauanrodrigues.com.br"

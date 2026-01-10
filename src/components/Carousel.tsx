@@ -11,16 +11,6 @@ const Carousel = ({ children, autoPlay = true, interval = 4000 }: CarouselProps)
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalItems = children.length;
 
-  useEffect(() => {
-    if (!autoPlay) return;
-
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalItems);
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [autoPlay, interval, totalItems]);
-
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
   };
@@ -41,8 +31,8 @@ const Carousel = ({ children, autoPlay = true, interval = 4000 }: CarouselProps)
   };
 
   const getCardStyles = (position: string) => {
-    const baseStyles = 'absolute top-1/2 transition-all duration-500 ease-out';
-    
+    const baseStyles = 'absolute top-1/2 transition-all duration-500 ease-out h-full ';
+
     switch (position) {
       case 'center':
         return `${baseStyles} left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 scale-100 opacity-100`;
@@ -56,7 +46,7 @@ const Carousel = ({ children, autoPlay = true, interval = 4000 }: CarouselProps)
   };
 
   return (
-    <div className="relative w-full h-[420px] sm:h-[480px]">
+    <div className="relative w-full h-[420px] ">
       {/* Cards Container */}
       <div className="relative w-full h-full overflow-hidden">
         {children.map((child, index) => (
@@ -64,7 +54,7 @@ const Carousel = ({ children, autoPlay = true, interval = 4000 }: CarouselProps)
             key={index}
             className={getCardStyles(getCardPosition(index))}
             style={{
-              width: 'min(90%, 340px)',
+              width: 'min(90%, 390px)',
             }}
           >
             {child}
@@ -75,34 +65,22 @@ const Carousel = ({ children, autoPlay = true, interval = 4000 }: CarouselProps)
       {/* Navigation Buttons */}
       <button
         onClick={goToPrevious}
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-background border-2 border-foreground/20 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-16 sm:h-12 flex items-center justify-center bg-background rounded-full text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
         aria-label="Previous"
       >
         <ChevronLeft size={20} />
       </button>
+
       <button
         onClick={goToNext}
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-background border-2 border-foreground/20 text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-40 w-11 h-10 sm:w-16 sm:h-12 flex items-center justify-center bg-background rounded-full text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
         aria-label="Next"
       >
         <ChevronRight size={20} />
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-40 flex gap-2">
-        {children.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 transition-all duration-300 ${
-              index === currentIndex
-                ? 'bg-primary w-8'
-                : 'bg-foreground/20 hover:bg-foreground/40'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+
     </div>
   );
 };

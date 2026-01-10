@@ -2,29 +2,32 @@ import { ArrowDown, MessageCircle, FolderOpen } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="hero min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+
+      {/* Availability Badge */}
+      <div className="absolute top-24 left-50% z-20 rounded-full inline-flex items-center gap-2  px-4 py-2 bg-primary border border-primary/20 animate-fade-in">
+        <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
+        <span className="font-body text-lg font-medium text-secondary">
+          Disponível para projetos
+        </span>
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl" />
+        <h1 className='title-hero-decoration'> Kauan
+          <br />
+          Rodrigues
+        </h1>
       </div>
 
       <div className="section-container relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Availability Badge */}
-          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-primary/10 border border-primary/20 animate-fade-in">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="font-body text-sm font-medium text-primary">
-              Disponível para projetos
-            </span>
-          </div>
-
+        <div className="max-w-4xl mx-auto text-center  p-6 rounded-3xl bg-background">
           {/* Main Content */}
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 animate-slide-up">
             Kauan Rodrigues
           </h1>
-          
-          <p className="font-body text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-12 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+
+          <p className="font-body text-xl sm:text-2xl md:text-3xl text-foreground mb-12 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Designer & Desenvolvedor de Sites
           </p>
 
@@ -47,17 +50,6 @@ const Hero = () => {
               Ver projetos
             </a>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <a
-            href="#sobre"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span className="font-body text-xs uppercase tracking-widest">Scroll</span>
-            <ArrowDown size={20} />
-          </a>
         </div>
       </div>
     </section>

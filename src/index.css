@@ -5,6 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+  font-family: 'ITC Garamond Std Book Narrow';
+  src: url('../public/ITCGaramondStd-BkIta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 39 33% 95%;
@@ -38,16 +46,16 @@
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'ITC Garamond Std Book Narrow', serif;
     --font-body: 'Roboto', sans-serif;
-    
+
     --shadow-soft: 0 4px 20px -4px hsl(349 65% 29% / 0.15);
     --shadow-card: 0 8px 32px -8px hsl(349 65% 29% / 0.2);
     --shadow-elevated: 0 20px 60px -15px hsl(349 65% 29% / 0.25);
-    
+
     --gradient-primary: linear-gradient(135deg, hsl(349 65% 29%), hsl(349 65% 22%));
     --gradient-hero: linear-gradient(180deg, hsl(39 33% 95%) 0%, hsl(39 33% 92%) 100%);
-    
+
     --section-accent: 349 65% 29%;
     --section-accent-foreground: 39 33% 95%;
   }
@@ -97,7 +105,12 @@
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }
@@ -125,7 +138,6 @@
   .card-brutalist:hover {
     @apply border-primary/30;
     box-shadow: var(--shadow-elevated);
-    transform: translateY(-4px);
   }
 
   .btn-primary {
@@ -135,7 +147,7 @@
 
   .btn-primary:hover {
     box-shadow: 0 6px 20px hsl(var(--primary) / 0.5);
-    transform: translateY(-2px);
+    transform: scale(1.02);
   }
 
   .btn-outline {
@@ -200,9 +212,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -213,6 +228,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -223,7 +239,34 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+}
+
+@font-face {
+  font-family: 'ITC Garamond Std Book Narrow';
+  src: url('../assets/fonts/ITCGaramondStd-BkIta.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+.title-hero-decoration {
+  font-family: 'ITC Garamond Std Book Narrow', serif;
+  font-size: 1000px;
+  text-align: center;
+  line-height: .7;
+  letter-spacing: -60px;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.hero {
+  background: linear-gradient(0deg, white 0%, rgba(0, 212, 255, 0) 70%);
 }
