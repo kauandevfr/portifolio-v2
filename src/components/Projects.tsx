@@ -21,7 +21,7 @@ const projects = [
     description: "Projeto autoral desenvolvido com apoio de inteligência artificial, com implementação e customização realizadas manualmente.",
     techs: ["ReactJS", "HTML5", "Inteligência Artificial"],
     repo: "https://github.com/kauandevfr/portifolio-v2",
-    access: "https://www.kauanrodrigues.com.br/"
+    access: "https://kauanrodrigues.com.br/"
   }
 ];
 
