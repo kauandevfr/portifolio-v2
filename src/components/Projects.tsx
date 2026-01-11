@@ -7,7 +7,7 @@ const projects = [
     description: "Sistema de controle financeiro pessoal com dashboard e gráficos.",
     techs: ["ReactJS", "HTML5", "CSS3", "Node.js"],
     repo: "https://github.com/kauandevfr/fluxofinanceirofrontend",
-    access: "https://www.fluxofinanceiro.site"
+    access: "https://www.fluxofinanceiro.kauanrodrigues.com.br"
   },
   {
     title: "Projeto Salve Quebrada",
