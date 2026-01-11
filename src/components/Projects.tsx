@@ -28,15 +28,15 @@ const projects = [
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
   <div className="card-brutalist bg-card overflow-hidden h-full flex flex-col">
     {/* Project Preview */}
-    <div className="h-48 bg-primary/10 flex items-center justify-center relative overflow-hidden">
+    <div className="h-48 bg-primary/50 flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5" />
-      <span className="font-heading text-4xl font-bold text-primary/30">
+      <span className="font-heading text-8xl">
         {project.title.charAt(0)}
       </span>
     </div>
 
     <div className="p-6 flex flex-col flex-grow">
-      <h3 className="font-heading text-xl font-bold text-foreground mb-2">
+      <h3 className="font-heading text-6xl text-background mb-2">
         {project.title}
       </h3>
 
@@ -44,21 +44,19 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
         {project.description}
       </p>
 
-      {/* Tech Stack */}
       <div className="flex flex-wrap gap-2 mb-6">
         {project.techs.map((tech, index) => (
           <span
             key={index}
-            className="px-3 py-1 text-xs font-body font-medium bg-primary/10 text-primary"
+            className="px-3 py-1 text-xs font-body font-medium bg-primary/10 text-primary rounded-full"
           >
             {tech}
           </span>
         ))}
       </div>
 
-      {/* Links */}
       <div className="flex gap-4">
-        <a
+        {/* <a
           href={project.repo}
           target="_blank"
           rel="noopener noreferrer"
@@ -66,12 +64,12 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
         >
           <Github size={18} />
           Repositório
-        </a>
+        </a> */}
         <a
           href={project.access}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-body text-sm font-medium text-foreground hover:text-primary transition-colors"
+          className="inline-flex items-center gap-2 font-body text-lg font-medium text-background transition-colors"
         >
           <ExternalLink size={18} />
           Acessar
@@ -83,7 +81,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
 
 const Projects = () => {
   return (
-    <section id="projetos" className="py-12 md:py-20 bg-secondary/30">
+    <section id="projetos" className="py-12 md:py-20 ">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">Meus Projetos</h2>

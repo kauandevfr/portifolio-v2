@@ -44,7 +44,7 @@ const skills = [
 ];
 
 const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
-  <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-white/40 hover:bg-white/15">
+  <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 h-full flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-white/40 hover:bg-white/15 backdrop-blur-3xl">
     <div className="w-20 h-20 mb-6 flex items-center justify-center bg-white/10 rounded-xl">
       <img
         src={skill.icon}
@@ -53,7 +53,7 @@ const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
       />
     </div>
 
-    <h3 className="font-heading text-2xl font-bold text-white mb-3">
+    <h3 className="font-heading text-6xl text-white mb-3 tracking-[.7px]">
       {skill.title}
     </h3>
 

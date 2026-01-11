@@ -2,37 +2,29 @@ import { ArrowDown, MessageCircle, FolderOpen } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="hero min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="hero-section min-h-screen flex items-center relative overflow-hidden pt-20">
 
-      {/* Availability Badge */}
-      <div className="absolute top-24 left-50% z-20 rounded-full inline-flex items-center gap-2  px-4 py-2 bg-primary border border-primary/20 animate-fade-in">
+
+
+      <div className="absolute left-1/2 -translate-x-1/2 top-24 z-20 rounded-full inline-flex items-center gap-2 px-4 py-2 bg-primary animate-fade-in">
         <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
-        <span className="font-body text-lg font-medium text-secondary">
+        <span className="font-body text-sm font-medium text-secondary">
           Disponível para projetos
         </span>
       </div>
 
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <h1 className='title-hero-decoration'> Kauan
-          <br />
-          Rodrigues
-        </h1>
-      </div>
+      <div className="section-container !ml-9 !p-0 relative z-10">
+        <div className="max-w-4xl mx-auto text-left">
 
-      <div className="section-container relative z-10">
-        <div className="max-w-4xl mx-auto text-center  p-6 rounded-3xl bg-background">
-          {/* Main Content */}
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 animate-slide-up">
-            Kauan Rodrigues
+          <h1 className="!leading-[80%] uppercase font-heading text-9xl sm:text-9xl md:text-9xl lg:text-[22rem] text-foreground mb-4 animate-slide-up">
+            Kauan <br /> Rodrigues
           </h1>
 
-          <p className="font-body text-xl sm:text-2xl md:text-3xl text-foreground mb-12 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <p className="font-body text-xl sm:text-2xl md:text-3xl text-ackground mb-10 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Designer & Desenvolvedor de Sites
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <a
               href="https://wa.me/5511930946704"
               target="_blank"
@@ -51,8 +43,8 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 

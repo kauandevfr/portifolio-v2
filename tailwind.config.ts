@@ -49,7 +49,7 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['ITC Garamond Std Book Narrow', 'serif'],
+        heading: ['KrishaRegular', 'serif'],
         body: ['Roboto', 'sans-serif'],
       },
       borderRadius: {
@@ -58,9 +58,6 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'soft': 'var(--shadow-soft)',
-        'card': 'var(--shadow-card)',
-        'elevated': 'var(--shadow-elevated)',
         'brutalist': '4px 4px 0 hsl(var(--foreground))',
         'brutalist-sm': '2px 2px 0 hsl(var(--foreground))',
       },

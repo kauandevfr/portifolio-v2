@@ -33,7 +33,7 @@ const certificates = [
 ];
 
 const CertificationCard = ({ certificate }: { certificate: typeof certificates[0] }) => (
-  <div className="card-brutalist bg-card p-6 h-full flex flex-col">
+  <div className="card-brutalist p-6 h-full flex flex-col backdrop-blur-3xl">
     <div className="flex items-start justify-between mb-4">
       <div className="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary">
         <Award size={24} />
@@ -41,7 +41,7 @@ const CertificationCard = ({ certificate }: { certificate: typeof certificates[0
       <span className="font-body text-sm text-muted-foreground">{certificate.year}</span>
     </div>
 
-    <h3 className="font-heading text-xl font-bold text-foreground mb-2">
+    <h3 className="font-heading text-6xl text-foreground mb-2 tracking-[.7px]">
       {certificate.title}
     </h3>
 
@@ -67,7 +67,7 @@ const CertificationCard = ({ certificate }: { certificate: typeof certificates[0
 
 const Certifications = () => {
   return (
-    <section id="certificacoes" className="py-12 md:py-20 bg-secondary/30">
+    <section id="certificacoes" className="py-12 md:py-20 ">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">Certificações & Cursos</h2>

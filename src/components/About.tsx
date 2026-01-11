@@ -6,7 +6,7 @@ const About = () => {
 
           {/* Text Column */}
           <div className="order-2 md:order-1">
-            <h2 className="section-title mb-8">Sobre Mim</h2>
+            <h2 className="section-title mb-8 text-center">Sobre Mim</h2>
 
             <div className="space-y-6 font-body text-base sm:text-lg text-foreground/80 leading-relaxed">
               <p>

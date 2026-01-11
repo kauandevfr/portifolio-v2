@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-sm ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/5 backdrop-blur-sm ${isScrolled
         ? 'shadow-soft'
         : ''
         }`}
@@ -32,7 +32,7 @@ const Header = () => {
         <nav className="flex items-center justify-between h-20">
           <a
             href="#"
-            className="font-heading text-2xl font-bold text-foreground hover:text-primary transition-colors"
+            className="font-heading text-6xl text-foreground hover:text-primary transition-colors"
           >
             KR
           </a>
