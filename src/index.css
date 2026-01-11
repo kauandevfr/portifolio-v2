@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'KrishaRegular';
-  src: url('../public/KrishaRegular-518Zx.otf') format('truetype');
+  src: url('../KrishaRegular-518Zx.otf') format('truetype');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -269,7 +269,7 @@
 .hero-section {
   background-image:
     linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8)),
-    url('/public/background.png');
+    url('/background.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
