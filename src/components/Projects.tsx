@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Fluxo Financeiro",
     description: "Sistema de controle financeiro pessoal com dashboard e gráficos.",
-    techs: ["ReactJS", "HTML5", "CSS3", "Node.js"],
+    techs: ["ReactJS", "HTML5", "CSS3", "Node.js", "PostgreSQL"],
     repo: "https://github.com/kauandevfr/fluxofinanceirofrontend",
     access: "https://fluxofinanceiro.kauanrodrigues.com.br"
   },
@@ -22,6 +22,13 @@ const projects = [
     techs: ["ReactJS", "HTML5", "Inteligência Artificial"],
     repo: "https://github.com/kauandevfr/portifolio-v2",
     access: "https://kauanrodrigues.com.br/"
+  },
+  {
+    title: "Tarefas",
+    description: "Sistema de controle de tarefas.",
+    techs: ["ReactJS", "HTML5", "CSS3", "Node.js", "PostgreSQL"],
+    repo: "https://github.com/kauandevfr/taskmanagement-frontend",
+    access: "https://tarefas.kauanrodrigues.com.br/"
   }
 ];
 
