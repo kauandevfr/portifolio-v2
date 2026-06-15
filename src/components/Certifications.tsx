@@ -26,9 +26,16 @@ const certificates = [
   {
     title: "Workshop IA Lab",
     description: "Workshop intensivo de IA aplicada ao design e identidade visual.",
-    organization: "IA Lab",
+    organization: "Marcelo Kimura",
     year: "2025",
     credential: "https://drive.google.com/file/d/1cVtlvVukkjDbAevKFoGqM-YEPoa8Dokh/view"
+  },
+    {
+    title: "Workshop TypeLab",
+    description: "Workshop intensivo de IA aplicada ao lettering e identidade visual.",
+    organization: "Marcelo Kimura e Matheus Mendes",
+    year: "2026",
+    credential: "https://drive.google.com/file/d/1Xynt5UdfpxHGbikXuK-wVLExjOclnq-6/view?usp=sharing"
   }
 ];
 
