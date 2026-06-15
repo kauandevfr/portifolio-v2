@@ -4,6 +4,6 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
-EXPOSE 4173
+EXPOSE 1003
 # use shell form p/ evitar qualquer array injectado:
 CMD npm run start
