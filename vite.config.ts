@@ -6,11 +6,11 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 7004,
+    port: 1003,
   },
   preview: {
     host: "::",
-    port: 7004,
+    port: 1003,
     allowedHosts: ["kauanrodrigues.com.br", ".kauanrodrigues.com.br", "portifolio.kauanrodrigues.com.br"],
   },
   plugins: [
