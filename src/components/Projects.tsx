@@ -29,6 +29,20 @@ const projects = [
     techs: ["ReactJS", "HTML5", "CSS3", "Node.js", "PostgreSQL"],
     repo: "https://github.com/kauandevfr/taskmanagement-frontend",
     access: "https://tarefas.kauanrodrigues.com.br/"
+  },
+  {
+    title: "Métricas",
+    description: "Sistema que apresenta algumas informações de homelab caseiro.",
+    techs: ["HTML5", "CSS3", "JavaScript", "Inteligência Artificial"],
+    repo: "https://github.com/kauandevfr/servidor",
+    access: "https://metricas.kauanrodrigues.com.br/"
+  },
+    {
+    title: "Mercado",
+    description: "Aplicação que gerencia sua lista de mercado.",
+    techs: ["HTML5", "CSS3", "JavaScript", "Inteligência Artificial"],
+    repo: "https://github.com/kauandevfr/lista-mercado",
+    access: "https://mercado.kauanrodrigues.com.br/"
   }
 ];
 
