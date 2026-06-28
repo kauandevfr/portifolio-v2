@@ -6,7 +6,7 @@ const sections = [
     title: 'Contato',
     links: [
       {
-        title: 'Entre em contato',
+        title: 'WhatsApp',
         href: 'https://wa.me/5511930946704?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento!',
         icon: MessageCircle,
       },
@@ -26,20 +26,16 @@ const sections = [
 
 const LinksPage = () => {
   return (
-    <main className="min-h-screen bg-background flex flex-col items-center px-4 py-12 sm:py-16 relative overflow-hidden">
-      {/* Pink/red ambient glows */}
-      <div className="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary/30 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
-
+    <main className="min-h-screen bg-background flex flex-col items-center px-4 py-12 sm:py-16">
       <Link
         to="/"
-        className="relative self-start max-w-xl w-full mx-auto inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors mb-8"
+        className="self-start max-w-xl w-full mx-auto inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors mb-8"
       >
         <ArrowLeft size={16} />
         Voltar
       </Link>
 
-      <section className="relative w-full max-w-xl flex flex-col items-center text-center">
+      <section className="w-full max-w-xl flex flex-col items-center text-center">
         {/* Pink hero card around avatar + title */}
         <div className="w-full rounded-3xl bg-primary text-primary-foreground px-6 py-10 mb-12 shadow-elevated relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" />
@@ -58,7 +54,7 @@ const LinksPage = () => {
           </div>
         </div>
 
-        <div className="relative w-full flex flex-col gap-10">
+        <div className="w-full flex flex-col gap-10">
           {sections.map((section) => (
             <div key={section.title} className="w-full">
               <div className="flex items-center gap-4 mb-5">
@@ -69,22 +65,17 @@ const LinksPage = () => {
                 <span className="h-px flex-1 bg-primary/60" />
               </div>
 
-              <ul className="w-full flex flex-col gap-4">
+              <ul className="w-full flex flex-col gap-4 items-center">
                 {section.links.map(({ title, href, icon: Icon }) => (
-                  <li key={href}>
+                  <li key={href} className="w-full sm:w-auto flex justify-center">
                     <a
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 w-full px-6 py-5 rounded-2xl border-2 border-primary/40 bg-primary/10 text-foreground transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-[1.02]"
+                      className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full bg-transparent border-2 border-foreground text-foreground transition-all duration-200 hover:bg-foreground hover:text-background gap-2 w-full sm:w-auto"
                     >
-                      <Icon
-                        size={20}
-                        className="text-primary group-hover:text-primary-foreground transition-colors"
-                      />
-                      <span className="font-body text-base sm:text-lg font-medium">
-                        {title}
-                      </span>
+                      <Icon size={20} />
+                      {title}
                     </a>
                   </li>
                 ))}
@@ -93,7 +84,7 @@ const LinksPage = () => {
           ))}
         </div>
 
-        <footer className="relative mt-14 text-sm text-foreground/60 font-body">
+        <footer className="mt-14 text-sm text-foreground/60 font-body">
           Desenvolvido por{' '}
           <span className="text-primary font-medium">Kauan Rodrigues</span>
         </footer>
