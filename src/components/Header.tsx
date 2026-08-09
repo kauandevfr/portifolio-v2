@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
@@ -11,6 +11,18 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.scrollTo(href, { offset: -80 });
+    } else {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
   }, []);
 
   const navLinks = [
@@ -32,6 +44,12 @@ const Header = () => {
         <nav className="flex items-center justify-between h-20">
           <a
             href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              const lenis = (window as any).__lenis;
+              if (lenis) lenis.scrollTo(0);
+              else window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className="font-heading text-6xl text-foreground hover:text-primary transition-colors"
           >
             KR
@@ -43,6 +61,7 @@ const Header = () => {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="font-body text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.label}
@@ -69,7 +88,7 @@ const Header = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="block px-6 py-3 font-body text-base text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors"
                   >
                     {link.label}

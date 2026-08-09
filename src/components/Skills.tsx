@@ -65,9 +65,15 @@ const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
 
 const Skills = () => {
   return (
-    <section id="habilidades" className="py-12 md:py-20 section-accent-bg">
+    <section 
+      id="habilidades" 
+      className="py-44 md:py-64 section-accent-bg relative"
+      style={{
+        clipPath: 'polygon(0 5.5vw, 100% 0, 100% calc(100% - 5.5vw), 0 100%)'
+      }}
+    >
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center">
           <h2 className="section-title">Habilidades & Tecnologias</h2>
           <p className="section-subtitle max-w-4xl mx-auto">
             Ferramentas e tecnologias que utilizo no dia a dia.

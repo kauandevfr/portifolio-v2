@@ -1,5 +1,7 @@
 import { ExternalLink, Award } from 'lucide-react';
-import Carousel from './Carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 const certificates = [
   {
@@ -30,7 +32,7 @@ const certificates = [
     year: "2025",
     credential: "https://drive.google.com/file/d/1cVtlvVukkjDbAevKFoGqM-YEPoa8Dokh/view"
   },
-    {
+  {
     title: "Workshop TypeLab",
     description: "Workshop intensivo de IA aplicada ao lettering e identidade visual.",
     organization: "Marcelo Kimura e Matheus Mendes",
@@ -74,20 +76,39 @@ const CertificationCard = ({ certificate }: { certificate: typeof certificates[0
 
 const Certifications = () => {
   return (
-    <section id="certificacoes" className="py-12 md:py-20 ">
+    <section id="certificacoes" className="py-20 md:py-32">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center text-center">
           <h2 className="section-title">Certificações & Cursos</h2>
           <p className="section-subtitle max-w-4xl mx-auto">
             Formação contínua para entregar sempre o melhor resultado.
           </p>
         </div>
 
-        <Carousel>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={12}
+          slidesPerView={1}
+          centeredSlides={true}
+          loop={true}
+          speed={1200}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 2, spaceBetween: 14 },
+            1024: { slidesPerView: 3, spaceBetween: 16 },
+          }}
+          className="certifications-swiper carousel-blur"
+        >
           {certificates.map((cert, index) => (
-            <CertificationCard key={index} certificate={cert} />
+            <SwiperSlide key={index} className="h-auto">
+              <CertificationCard certificate={cert} />
+            </SwiperSlide>
           ))}
-        </Carousel>
+        </Swiper>
       </div>
     </section>
   );

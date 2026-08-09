@@ -1,55 +1,90 @@
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const paragraphs = [
+  "Sou desenvolvedor Front-end em formação, estudante de Análise e Desenvolvimento de Sistemas pela Anhanguera e formado em Desenvolvimento de Software pela Cubos Academy.",
+  "Tenho experiência prática no desenvolvimento de produtos digitais e interesse em criar soluções modernas, funcionais e bem estruturadas.",
+  "Atualmente, aprofundo meus conhecimentos em arquitetura, performance e boas práticas de desenvolvimento, buscando evoluir constantemente e entregar projetos escaláveis e de qualidade.",
+  "Destaco-me pela resolução de problemas, comunicação clara, aprendizagem rápida e trabalho em equipe."
+];
+
 const About = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      if (!triggerRef.current || !trackRef.current) return;
+
+      const track = trackRef.current;
+      const blocks = track.children;
+      if (blocks.length === 0) return;
+
+      const firstBlock = blocks[0] as HTMLElement;
+      const lastBlock = blocks[blocks.length - 1] as HTMLElement;
+
+      const getScrollDistance = () => {
+        return lastBlock.offsetTop - firstBlock.offsetTop;
+      };
+
+      const distance = getScrollDistance();
+
+      gsap.to(track, {
+        y: -distance,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          pin: true,
+          scrub: 1,
+          start: 'top top',
+          end: () => `+=${getScrollDistance()}`,
+          invalidateOnRefresh: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="sobre" className="py-12 md:py-20">
-      <div className="section-container">
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-4 items-center">
-
-          {/* Text Column */}
-          <div className="order-2 md:order-1">
-            <h2 className="section-title mb-8 text-center">Sobre Mim</h2>
-
-            <div className="space-y-6 font-body text-base sm:text-lg text-foreground/80 leading-relaxed">
-              <p>
-                Sou desenvolvedor front-end, 21 anos, residente em São Paulo/SP. Atualmente curso
-                Análise e Desenvolvimento de Sistemas pela Anhanguera e possuo formação complementar
-                em Desenvolvimento de Software pela Cubos Academy, onde adquiri uma base sólida em
-                programação. Tenho experiência prática no desenvolvimento de interfaces modernas
-                utilizando HTML5, CSS3, JavaScript (ES6+), ReactJS, Node.js e PostgreSQL. Também atuo
-                com design, aplicando princípios de UI na criação de produtos digitais.
-              </p>
-
-
-              <p>
-                Trabalho com ferramentas do ecossistema atual, como Vite, Docker, GitHub e soluções de
-                Inteligência Artificial aplicadas ao desenvolvimento, além de realizar deploy e
-                gerenciamento de aplicações em VPS.
-              </p>
-
-              <p>
-                Atualmente aprofundo meus estudos em arquitetura front-end, performance web e padrões
-                que tornam aplicações mais escaláveis, modulares e de fácil manutenção. Busco entregar
-                código robusto e alinhado às melhores práticas do mercado.
-              </p>
-
-              <p>
-                No tempo livre, estudo novas tecnologias e desenvolvo projetos pessoais. Minhas
-                principais soft skills são: <strong className="text-primary">resolução de problemas</strong>,
-                {' '}<strong className="text-primary">comunicação clara</strong>,
-                {' '}<strong className="text-primary">aprendizagem rápida</strong> e
-                {' '}<strong className="text-primary">trabalho em equipe</strong>.
-              </p>
-            </div>
+    <section ref={sectionRef} id="sobre" className="relative overflow-hidden bg-background">
+      <div
+        ref={triggerRef}
+        className="h-screen w-full flex items-center justify-center pt-16 md:pt-0 px-4 sm:px-8 md:px-12"
+      >
+        <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center h-full max-h-screen">
+          
+          {/* Lado Esquerdo Fixo: Título "SOBRE MIM?" */}
+          <div className="md:col-span-6 lg:col-span-6 flex items-center z-10 pt-8 md:pt-0">
+            <h2 className="!leading-[80%] uppercase font-heading text-9xl sm:text-9xl md:text-9xl lg:text-[22rem] tracking-tight whitespace-nowrap">
+              <span className="text-white">SOBRE MIM</span>
+              <span className="text-primary">?</span>
+            </h2>
           </div>
 
-          {/* Image Column */}
-          <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative">
-              <div className="absolute -inset-4 border-2 border-primary/20 -z-10 translate-x-4 translate-y-4" />
-              <img
-                src="https://avatars.githubusercontent.com/u/104030967?v=4"
-                alt="Kauan Rodrigues"
-                className="w-80 h-80 sm:w-80 sm:h-80 lg:w-full lg:h-full object-cover rounded transition-all duration-500 rounded-3xl"
-              />
+          {/* Lado Direito: Palco dos textos (cada bloco tem a altura da área útil h-[65vh] md:h-screen) */}
+          <div className="md:col-span-6 lg:col-span-6 relative h-[60vh] md:h-screen overflow-hidden">
+            <div
+              ref={trackRef}
+              className="flex flex-col will-change-transform w-full max-w-xl pr-4"
+            >
+              {paragraphs.map((text, index) => (
+                <div key={index} className="w-full h-[60vh] md:h-screen flex items-center shrink-0">
+                  <p className="font-body text-lg sm:text-2xl md:text-3xl lg:text-4xl text-white font-normal leading-relaxed">
+                    {text.includes("resolução de problemas") ? (
+                      <>
+                        Destaco-me pela <strong className="text-primary font-semibold">resolução de problemas</strong>, <strong className="text-primary font-semibold">comunicação clara</strong>, <strong className="text-primary font-semibold">aprendizagem rápida</strong> e <strong className="text-primary font-semibold">trabalho em equipe</strong>.
+                      </>
+                    ) : (
+                      text
+                    )}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
