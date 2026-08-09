@@ -10,7 +10,7 @@ const projects = [
     title: "Fluxo Financeiro",
     description: "Sistema de controle financeiro pessoal com dashboard e gráficos.",
     techs: ["ReactJS", "HTML5", "CSS3", "Node.js", "PostgreSQL"],
-    image: "https://i.postimg.cc/V65yqHT6/fluxo-financeiro.avif",
+    image: "/fluxo-financeiro.avif",
     repo: "https://github.com/kauandevfr/fluxofinanceirofrontend",
     access: "https://fluxofinanceiro.kauanrodrigues.com.br"
   },
@@ -18,7 +18,7 @@ const projects = [
     title: "Salve Quebrada",
     description: "Iniciativa social voltada à promoção do esporte e do desenvolvimento social na comunidade.",
     techs: ["ReactJS", "HTML5", "CSS3"],
-    image: "https://i.postimg.cc/zf2DYWYg/salve-quebrada.avif",
+    image: "/salve-quebrada.avif",
     repo: "https://github.com/kauandevfr/salve-quebrada",
     access: "https://www.salvequebrada.org/"
   },
@@ -26,7 +26,7 @@ const projects = [
     title: "Portifólio",
     description: "Projeto autoral desenvolvido com apoio de inteligência artificial, com implementação e customização realizadas manualmente.",
     techs: ["ReactJS", "HTML5", "Inteligência Artificial"],
-    image: "https://i.postimg.cc/nhZh4p1x/portifolio.avif",
+    image: "/portifolio.avif",
     repo: "https://github.com/kauandevfr/portifolio-v2",
     access: "https://kauanrodrigues.com.br/"
   },
@@ -34,7 +34,7 @@ const projects = [
     title: "Tarefas",
     description: "Sistema de controle de tarefas.",
     techs: ["ReactJS", "HTML5", "CSS3", "Node.js", "PostgreSQL"],
-    image: "https://i.postimg.cc/QNT8vH4D/tarefas.avif",
+    image: "/tarefas.avif",
     repo: "https://github.com/kauandevfr/taskmanagement-frontend",
     access: "https://tarefas.kauanrodrigues.com.br/"
   },
@@ -50,7 +50,7 @@ const projects = [
     title: "Métricas",
     description: "Sistema que apresenta algumas informações de homelab caseiro.",
     techs: ["HTML5", "CSS3", "JavaScript", "Inteligência Artificial"],
-    image: "https://i.postimg.cc/RCkF0c61/metricas-servidor.avif",
+    image: "/metricas-servidor.avif",
     access: "https://metricas.kauanrodrigues.com.br/"
   }
 ];
