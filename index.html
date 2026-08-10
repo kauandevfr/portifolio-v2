@@ -27,6 +27,8 @@
 </head>
 
 <body>
+  <!-- Roda antes de qualquer JS: impede o browser de restaurar o scroll -->
+  <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

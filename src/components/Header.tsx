@@ -40,7 +40,7 @@ const Header = () => {
         : ''
         }`}
     >
-      <div className="section-container">
+      <div className="section-container !pl-9 !pr-9">
         <nav className="flex items-center justify-between h-20">
           <a
             href="#"

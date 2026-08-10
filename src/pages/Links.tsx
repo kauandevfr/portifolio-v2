@@ -101,7 +101,7 @@ const links = [
     icon: ArrowRight,
   },
   {
-    title: 'Potifólio',
+    title: 'Portifólio',
     href: 'https://www.kauanrodrigues.com.br/',
     icon: ArrowRight,
   },

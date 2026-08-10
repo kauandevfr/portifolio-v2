@@ -5,10 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = [
-  "Sou desenvolvedor Front-end em formação, estudante de Análise e Desenvolvimento de Sistemas pela Anhanguera e formado em Desenvolvimento de Software pela Cubos Academy.",
-  "Tenho experiência prática no desenvolvimento de produtos digitais e interesse em criar soluções modernas, funcionais e bem estruturadas.",
-  "Atualmente, aprofundo meus conhecimentos em arquitetura, performance e boas práticas de desenvolvimento, buscando evoluir constantemente e entregar projetos escaláveis e de qualidade.",
-  "Destaco-me pela resolução de problemas, comunicação clara, aprendizagem rápida e trabalho em equipe."
+  "Sou desenvolvedor Front-end e estudante de Análise e Desenvolvimento de Sistemas pela Anhanguera, com formação complementar em Desenvolvimento de Software pela Cubos Academy. Tenho experiência prática no desenvolvimento de interfaces modernas, com foco em qualidade, organização e boa experiência de uso.",
+  "Também possuo experiência com desenvolvimento, deploy e gerenciamento de aplicações, além do uso de Inteligência Artificial como ferramenta de apoio ao processo de desenvolvimento.",
+  "Atualmente, aprofundo meus conhecimentos em arquitetura Front-end, performance e boas práticas de desenvolvimento, buscando construir aplicações cada vez mais escaláveis, modulares e fáceis de manter.",
 ];
 
 const About = () => {
@@ -54,15 +53,19 @@ const About = () => {
     <section ref={sectionRef} id="sobre" className="relative overflow-hidden bg-background">
       <div
         ref={triggerRef}
-        className="h-screen w-full flex items-center justify-center pt-16 md:pt-0 px-4 sm:px-8 md:px-12"
+        className="min-h-screen w-full flex items-center justify-center py-20 md:py-0 px-4 sm:px-8 md:px-12"
       >
-        <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center h-full max-h-screen">
-          
+        <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center max-h-screen">
+
           {/* Lado Esquerdo Fixo: Título "SOBRE MIM?" */}
           <div className="md:col-span-6 lg:col-span-6 flex items-center z-10 pt-8 md:pt-0">
-            <h2 className="!leading-[80%] uppercase font-heading text-9xl sm:text-9xl md:text-9xl lg:text-[22rem] tracking-tight whitespace-nowrap">
-              <span className="text-white">SOBRE MIM</span>
-              <span className="text-primary">?</span>
+            <h2
+              className="!leading-[80%] uppercase font-heading tracking-tight whitespace-nowrap"
+              style={{ fontSize: 'clamp(3rem, 12vw, 22rem)' }}
+            >
+              <span className="text-white"
+                style={{ fontSize: 'clamp(2.5rem, min(18vw, 28vh), 22rem)' }}
+              >SOBRE MIM</span>
             </h2>
           </div>
 

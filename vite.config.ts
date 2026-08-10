@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 1003,
+    allowedHosts: true,
   },
   preview: {
     host: "::",

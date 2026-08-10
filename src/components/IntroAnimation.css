@@ -1,0 +1,113 @@
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: all;
+}
+
+.intro-overlay.intro-done {
+  pointer-events: none;
+}
+
+.intro-text-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.intro-text {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #f5f0e8;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+/* "OLÁ" — mesma estilização do h1 Hero */
+.intro-text--ola {
+  font-family: 'KrishaRegular', serif !important;
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+/* "Me chamo" — menor, suave */
+.intro-text--sub {
+  font-size: clamp(1.4rem, 4vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.6);
+}
+
+/* "KAUAN" — destaque máximo, mesma estilização do h1 Hero */
+.intro-text--name {
+  font-family: 'KrishaRegular', serif !important;
+  font-size: clamp(8rem, 26vw, 24rem);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* Cursor typewriter do KAUAN — width:0 garante que o _ não desloca o texto */
+.intro-kauan-cursor {
+  display: inline-block;
+  width: 0;
+  overflow: visible;
+  white-space: nowrap;
+  animation: introKauanBlink 0.55s step-end infinite;
+}
+
+@keyframes introKauanBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* "e esse é o meu" — pequeno, de passagem */
+.intro-text--bridge {
+  font-size: clamp(1.2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.55);
+}
+
+/* "PORTIFÓLIO" — mesma estilização do h1 Hero */
+.intro-text--portfolio {
+  font-family: 'KrishaRegular', serif !important;
+  font-size: clamp(6rem, 20vw, 18rem);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #f5f0e8;
+}
+
+/* Linha decorativa que aparece junto com PORTIFOLIO */
+.intro-line {
+  position: absolute;
+  height: 1px;
+  width: min(600px, 70vw);
+  background: rgba(245, 240, 232, 0.3);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  will-change: transform, opacity;
+}

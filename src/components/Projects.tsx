@@ -60,7 +60,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
     href={project.access}
     target="_blank"
     rel="noopener noreferrer"
-    className="card-brutalist relative overflow-hidden h-[460px] sm:h-[520px] md:h-[560px] flex flex-col justify-end w-[85vw] max-w-[800px] shrink-0"
+    className="card-brutalist relative overflow-hidden h-[42vh] min-h-[260px] max-h-[480px] flex flex-col justify-end w-[85vw] max-w-[800px] shrink-0"
   >
     {/* Imagem de Fundo Completa */}
     <img
@@ -139,7 +139,7 @@ const Projects = () => {
     <section ref={sectionRef} id="projetos" className="relative overflow-hidden">
       <div
         ref={triggerRef}
-        className="h-screen w-full flex flex-col justify-center overflow-hidden  pb-8"
+        className="h-screen min-h-[500px] w-full flex flex-col justify-center overflow-hidden pt-20 pb-20"
       >
         <div className="text-center mb-8 shrink-0 px-4">
           <h2 className="section-title">Meus Projetos</h2>

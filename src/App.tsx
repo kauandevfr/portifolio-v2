@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
+import IntroAnimation from "./components/IntroAnimation";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,6 +18,36 @@ gsap.registerPlugin(ScrollTrigger);
 const queryClient = new QueryClient();
 
 const App = () => {
+  // A intro só roda na página inicial (/)
+  const [showIntro, setShowIntro] = useState<boolean>(() => {
+    const isHome = window.location.pathname === "/";
+    if (!isHome) return false;
+
+    // Desabilita a restauração nativa de scroll do browser (sobrescreveria o scrollTo abaixo)
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    // Executa sincronamente antes do primeiro render:
+    // trava scroll e vai ao topo antes de qualquer paint
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+    // Sinaliza globalmente para que o Hero aguarde o evento 'intro:complete'
+    (window as any).__introActive = true;
+    return true;
+  });
+
+  const handleIntroComplete = useCallback(() => {
+    (window as any).__introActive = false;
+    // Libera scroll ao terminar
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    // Retoma o Lenis se estiver inicializado
+    const lenis = (window as any).__lenis;
+    if (lenis) lenis.start();
+    setShowIntro(false);
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.045,
@@ -34,6 +65,11 @@ const App = () => {
     console.log("🔍 isSmooth:", lenis.isSmooth);
     console.log("🔍 isStopped:", lenis.isStopped);
     console.log("🔍 prefersReducedMotion:", lenis.prefersReducedMotion);
+
+    // Se a intro estiver rodando, para o Lenis até ela terminar
+    if ((window as any).__introActive) {
+      lenis.stop();
+    }
 
     lenis.on("scroll", () => {
       ScrollTrigger.update();
@@ -54,20 +90,26 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/links" element={<Links />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <>
+      {showIntro && <IntroAnimation onComplete={handleIntroComplete} />}
+      {/* visibility:hidden mantém o layout intacto mas esconde o conteúdo durante a intro */}
+      <div style={{ visibility: showIntro ? 'hidden' : 'visible' }}>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/links" element={<Links />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </div>
+    </>
   );
 };
 

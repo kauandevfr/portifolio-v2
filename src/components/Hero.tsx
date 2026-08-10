@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MessageCircle, FolderOpen } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -9,71 +9,87 @@ const Hero = () => {
 
   const fullSubtitle = 'Designer & Desenvolvedor de Sites';
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const chars = titleRef.current?.querySelectorAll('.hero-char');
-      const tl = gsap.timeline();
+  useEffect(() => {
+    // Flag global gravada pelo App quando a intro está ativa
+    const introIsActive = (window as any).__introActive === true;
 
-      if (chars && chars.length > 0) {
-        tl.from(
-          chars,
-          {
-            opacity: 0,
-            y: -40,
-            scale: 0.95,
-            filter: 'blur(1.8rem)',
-            duration: 2,
-            stagger: 0.09,
-            ease: 'power3.out',
-            clearProps: 'transform,opacity,filter',
-          },
-          0
-        );
-      }
+    const runAnimation = () => {
+      const ctx = gsap.context(() => {
+        const chars = titleRef.current?.querySelectorAll('.hero-char');
+        const tl = gsap.timeline();
 
-      if (subtitleRef.current) {
-        subtitleRef.current.textContent = '';
-        const progress = { count: 0 };
-
-        tl.to(
-          progress,
-          {
-            count: fullSubtitle.length,
-            duration: 3,
-            ease: 'none',
-            onUpdate: () => {
-              if (subtitleRef.current) {
-                subtitleRef.current.textContent = fullSubtitle.slice(
-                  0,
-                  Math.round(progress.count)
-                );
-              }
+        if (chars && chars.length > 0) {
+          tl.from(
+            chars,
+            {
+              opacity: 0,
+              y: -40,
+              scale: 0.95,
+              filter: 'blur(1.8rem)',
+              duration: 2,
+              stagger: 0.09,
+              ease: 'power3.out',
+              clearProps: 'transform,opacity,filter',
             },
-            onComplete: () => {
-              if (subtitleRef.current) {
-                subtitleRef.current.textContent = fullSubtitle;
-              }
-            },
-          },
-          0
-        );
-      }
-    }, containerRef);
+            0
+          );
+        }
 
-    return () => ctx.revert();
+        if (subtitleRef.current) {
+          subtitleRef.current.textContent = '';
+          const progress = { count: 0 };
+
+          tl.to(
+            progress,
+            {
+              count: fullSubtitle.length,
+              duration: 3,
+              ease: 'none',
+              onUpdate: () => {
+                if (subtitleRef.current) {
+                  subtitleRef.current.textContent = fullSubtitle.slice(
+                    0,
+                    Math.round(progress.count)
+                  );
+                }
+              },
+              onComplete: () => {
+                if (subtitleRef.current) {
+                  subtitleRef.current.textContent = fullSubtitle;
+                }
+              },
+            },
+            0
+          );
+        }
+      }, containerRef);
+
+      return () => ctx.revert();
+    };
+
+    if (!introIsActive) {
+      // Sem intro ativa: roda imediatamente
+      return runAnimation();
+    }
+
+    // Com intro ativa: aguarda o sinal de conclusão
+    const handler = () => runAnimation();
+    window.addEventListener('intro:complete', handler, { once: true });
+    return () => window.removeEventListener('intro:complete', handler);
   }, []);
 
   const lines = ['Kauan', 'Rodrigues'];
 
   return (
-    <section className="hero-section min-h-screen flex items-center relative overflow-hidden pt-20">
+    <section className="hero-section min-h-screen flex items-center relative overflow-hidden pt-20 pb-8">
       <div ref={containerRef} className="section-container !ml-9 !p-0 relative z-10">
-        <div className="max-w-4xl mx-auto text-left">
+        <div className="text-left">
 
           <h1
             ref={titleRef}
             aria-label="Kauan Rodrigues"
-            className="!leading-[80%] uppercase font-heading text-9xl sm:text-9xl md:text-9xl lg:text-[22rem] text-foreground mb-4"
+            className="!leading-[80%] uppercase font-heading text-foreground mb-4"
+            style={{ fontSize: 'clamp(2.5rem, min(18vw, 28vh), 22rem)' }}
           >
             {lines.map((line, lineIndex) => (
               <React.Fragment key={lineIndex}>

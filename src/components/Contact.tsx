@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Github, Linkedin } from 'lucide-react';
+import { Mail, MessageCircle, Github, Linkedin, FolderOpen } from 'lucide-react';
 
 const socialLinks = [
   {
@@ -22,11 +22,14 @@ const Contact = () => {
   return (
     <section id="contato" className="py-16 md:py-24 min-h-screen flex items-center bg-background text-foreground overflow-hidden">
       <div className="w-full px-4 sm:px-8 md:px-12">
-        <div className="flex flex-col justify-between min-h-[75vh] gap-12">
+        <div className="flex flex-col justify-between h-full gap-8 md:gap-12">
 
           {/* Canto Superior Esquerdo */}
           <div className="text-left">
-            <h2 className="!leading-[80%] uppercase font-heading text-9xl sm:text-9xl md:text-9xl lg:text-[22rem] text-left mb-3">
+            <h2
+              className="!leading-[80%] uppercase font-heading text-left mb-3"
+              style={{ fontSize: 'clamp(2.5rem, 10vw, 22rem)' }}
+            >
               <span className="block text-white">VAMOS TRABALHAR</span>
               <span className="block text-primary">JUNTOS?</span>
             </h2>
@@ -61,22 +64,31 @@ const Contact = () => {
             </div>
 
             {/* Botões principais */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <a
-                href="mailto:kauan@kauanrodrigues.com.br"
-                className="btn-primary justify-center gap-2 w-full sm:w-auto text-xl px-10 py-5"
-              >
-                <Mail size={24} />
-                Enviar e-mail
-              </a>
+            <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <a
                 href="https://wa.me/5511930946704"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline justify-center gap-2 w-full sm:w-auto text-xl px-10 py-5"
+                className="btn-primary gap-2 w-full sm:w-auto justify-center"
               >
-                <MessageCircle size={24} />
-                WhatsApp
+                <MessageCircle size={20} />
+                Entre em contato
+              </a>
+              <a
+                href="#projetos"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const lenis = (window as any).__lenis;
+                  if (lenis) {
+                    lenis.scrollTo('#projetos', { offset: -80 });
+                  } else {
+                    document.querySelector('#projetos')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="btn-outline gap-2 w-full sm:w-auto"
+              >
+                <FolderOpen size={20} />
+                Ver projetos
               </a>
             </div>
           </div>
