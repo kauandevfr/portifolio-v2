@@ -65,8 +65,8 @@ const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
 
 const Skills = () => {
   return (
-    <section 
-      id="habilidades" 
+    <section
+      id="habilidades"
       className="py-44 md:py-64 section-accent-bg relative"
       style={{
         clipPath: 'polygon(0 5.5vw, 100% 0, 100% calc(100% - 5.5vw), 0 100%)'

@@ -115,7 +115,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <a
-              href="https://wa.me/5511930946704"
+              href="https://wa.me/5511930946704?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary gap-2 w-full sm:w-auto justify-center"

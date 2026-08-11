@@ -97,7 +97,7 @@ const BriefcaseIcon = ({ size = 24 }) => (
 const links = [
   {
     title: 'Solicitar orçamento',
-    href: 'https://wa.me/5511930946704?text=Ol%C3%A1!%20Quero%20fazer%20um%20or%C3%A7amento!',
+    href: 'https://wa.me/5511930946704?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio.',
     icon: ArrowRight,
   },
   {
@@ -109,7 +109,7 @@ const links = [
 
 const icons = [
   {
-    href: 'https://wa.me/5511930946704',
+    href: 'https://wa.me/5511930946704?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio.',
     icon: WhatsAppIcon,
   },
   {
