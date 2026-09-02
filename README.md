@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# 💼 Kauan Rodrigues — Portfólio & Links
 
-## Project info
+[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
+[![GSAP](https://img.shields.io/badge/GSAP-3-green?logo=greensock)](https://greensock.com/gsap/)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Portfólio pessoal e profissional de **Kauan Rodrigues**, Desenvolvedor Front-end & Designer de Sites. O projeto reúne projetos autorais e profissionais, experiência prática em interfaces modernas, competências técnicas, certificações, página personalizada de links (bio) e contato direto.
 
-## How can I edit this code?
+🌐 **Acesse online:** [kauanrodrigues.com.br](https://kauanrodrigues.com.br)  
+🔗 **Página de Links:** [kauanrodrigues.com.br/links](https://kauanrodrigues.com.br/links)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🚀 Tecnologias e Ferramentas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Core:** [React 18](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+- **Estilização & UI:** [Tailwind CSS](https://tailwindcss.com/), [Shadcn UI](https://ui.shadcn.com/) / Radix UI, CSS Modules
+- **Animações & Interatividade:** [GSAP (GreenSock)](https://greensock.com/gsap/) com `ScrollTrigger`, [Lenis](https://github.com/darkroomengineering/lenis) (Smooth Scroll)
+- **Ícones & Mídia:** [Lucide React](https://lucide.dev/), Devicons, SVGs customizados
+- **Deploy & Infraestrutura:** Docker, Nixpacks, [Coolify](https://coolify.io/)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 📌 Principais Recursos & Estrutura
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 1. Página Inicial (`/`)
+- **Intro Animation:** Animação de abertura e transição cinematográfica fluida.
+- **Hero:** Tipografia brutalista dinâmica, revelação de caracteres e efeito máquina de escrever com GSAP.
+- **Sobre Mim:** Seção horizontal interativa com scroll-pinning destacando trajetória, experiência e mentalidade de desenvolvimento.
+- **Projetos em Destaque:** Carrossel / cards brutalistas com preview visual e links diretos:
+  - **Fluxo Financeiro:** Sistema completo de controle financeiro pessoal com dashboard e gráficos.
+  - **Salve Quebrada:** Projeto de impacto social focado em esporte e comunidade.
+  - **Tarefas:** Aplicação web para gerenciamento e controle de tarefas.
+  - **Métricas:** Painel visual para monitoramento de homelab.
+- **Habilidades & Tecnologias:** Vitrine com JavaScript, React, HTML5, CSS3, Node.js, PostgreSQL, Photoshop e Illustrator.
+- **Certificações:** Destaque de cursos e formações técnicas.
+- **Contato & CTA WhatsApp:** Formulário de envio e botão flutuante para contato instantâneo.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 2. Página de Links (`/links`)
+- Hub moderno estilo *Linktree*, otimizado para dispositivos móveis.
+- Acesso rápido para solicitação de orçamento via WhatsApp, portfólio completo, Instagram, LinkedIn e TikTok.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠️ Como Executar Localmente
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- `npm` ou `yarn` / `pnpm`
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Passos
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/kauandevfr/portifolio-v2.git
+   cd portifolio-v2
+   ```
 
-**Edit a file directly in GitHub**
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+   Acesse a aplicação no navegador em `http://localhost:5173` (ou porta indicada no terminal).
 
-**Use GitHub Codespaces**
+4. **Scripts disponíveis:**
+   - `npm run dev`: Inicia o servidor local de desenvolvimento Vite.
+   - `npm run build`: Compila a aplicação para produção.
+   - `npm run preview`: Visualiza o build de produção localmente.
+   - `npm run lint`: Executa a verificação estática com ESLint.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🚢 Deploy
 
-This project is built with:
+A aplicação está configurada para deploy contínuo através do **Coolify** utilizando build automatizado via **Nixpacks** e conteinerização Docker autônoma.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📄 Licença
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Projeto desenvolvido por **Kauan Rodrigues**. Todos os direitos reservados.
