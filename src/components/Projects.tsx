@@ -50,7 +50,7 @@ const projects = [
     title: "Métricas",
     description: "Sistema que apresenta algumas informações de homelab caseiro.",
     techs: ["HTML5", "CSS3", "JavaScript", "Inteligência Artificial"],
-    image: "/metricas-servidor.avif",
+    image: "/metricasservidor.avif",
     access: "https://metricas.kauanrodrigues.com.br/"
   }
 ];
