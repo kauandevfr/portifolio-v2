@@ -15,6 +15,14 @@ const projects = [
     access: "https://fluxofinanceiro.kauanrodrigues.com.br"
   },
   {
+    title: "Sistema Salve Quebrada",
+    description: "Plataforma de gestão pedagógica e operacional para controle de alunos, turmas, presenças e eventos.",
+    techs: ["ReactJS", "SCSS", "Node.js", "Express", "PostgreSQL"],
+    image: "/sistema-salve-quebrada.avif",
+    repo: "https://github.com/kauandevfr/frontend_dashboard_salvequebrada",
+    access: "https://gestao.salvequebrada.org/"
+  },
+  {
     title: "Salve Quebrada",
     description: "Iniciativa social voltada à promoção do esporte e do desenvolvimento social na comunidade.",
     techs: ["ReactJS", "HTML5", "CSS3"],
